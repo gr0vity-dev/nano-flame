@@ -25,4 +25,4 @@ case $platform in
 esac
 
 # Run the Docker command
-docker run --rm --privileged --pid=container:${nano_node_container_name} -v $(pwd):/data gr0v1ty/nano_flame:${image_tag} ${duration} > nano-flame.out
+docker run -it --rm --privileged --pid=container:${nano_node_container_name} -v $(pwd):/data gr0v1ty/nano_flame:${image_tag} ${duration}

@@ -1,42 +1,45 @@
 # nano_flame
 
-`nano_flame` is a tool designed to simplify the generation of flame graphs for docker instances running `nano_node`. 
-It's particularly useful for developers who need to analyze and optimize the performance of the nano-currency node.
+`nano_flame` is a tool designed to simplify the generation of flame graphs for docker instances running `nano_node`. It's particularly useful for developers who need to analyze and optimize the performance of the nano-currency node.
 
 ## Features
 - **Automatic Architecture Detection**: The script detects whether it's running on AMD64 or ARM64 (including Apple M1/M2) and selects the appropriate Docker image.
-- **Easy to Use**: Run the script without the need to download it, using a simple curl or wget command.
+- **Easy to Use**: Easily generate flame graphs for your `nano_node` instances.
 
 ## Prerequisites
 - Docker installed on your system.
-- Access to the internet to pull Docker images and the script.
+- Git installed on your system for cloning the repository.
 
 ## Installation
-Run the following command to execute the script directly without downloading:
+Clone the `nano_flame` project from GitHub:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s [container_name] [duration in seconds]
+git clone https://github.com/gr0vity-dev/nano-flame
 ```
 
+Navigate to the cloned directory and run the `add_alias.sh` script to add `nano-flame` as an alias in your shell:
+
+```bash
+cd nano-flame
+./add_alias.sh
+```
+
+This will set up the `nano-flame` command so you can easily call it from the terminal.
 
 ## Usage
-After running the installation command, follow these steps:
+With the alias set up, you can use `nano-flame` to generate flame graphs:
+
+```bash
+nano-flame [container_name] [duration in seconds]
+```
+
 1. **Specify the Container Name**: Replace `[container_name]` with the name of your Docker container running `nano_node`.
 2. **Set the Duration**: Replace `[duration in seconds]` with the duration for which you want to generate the flame graph.
 
 Example:
 ```bash
-curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s nl_pr1 20
+nano-flame nl_pr1 20
 ```
-
-## Add as alias
-Add the following line into `~/.zshrc` or `~/.bash_aliases`
-```zsh
-alias nano-flame='f() { curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s "$1" "$2"; }; f'
-```
-followed by `source ~/.zshrc` or  `source ~/.bash_aliases` 
-to run `nano-flame {container_name} {duration}` directly from shell
-
 
 ## Contributing
 Contributions are welcome! If you have suggestions or improvements, please submit a pull request or open an issue in the GitHub repository.
@@ -49,4 +52,3 @@ This script runs with elevated privileges and performs system checks. Please rev
 
 ## Acknowledgments
 - This project is inspired by the need for easy performance analysis of nano nodes.
-
