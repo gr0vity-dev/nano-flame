@@ -29,6 +29,15 @@ Example:
 curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s nl_pr1 20
 ```
 
+## Add as alias
+Add the following line into `~/.zshrc` or `~/.bash_aliases`
+```zsh
+alias nano-flame='f() { curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s "$1" "$2"; }; f'
+```
+followed by `source ~/.zshrc` or  `source ~/.bash_aliases` 
+to run `nano-flame {container_name} {duration}` directly from shell
+
+
 ## Contributing
 Contributions are welcome! If you have suggestions or improvements, please submit a pull request or open an issue in the GitHub repository.
 
