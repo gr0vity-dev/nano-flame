@@ -6,7 +6,6 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-# Assign arguments to variables
 nano_node_container_name=$1
 duration=$2
 
@@ -26,4 +25,4 @@ case $platform in
 esac
 
 # Run the Docker command
-docker run --rm --privileged --pid=container:${nano_node_container_name} -v $(pwd):/data gr0v1ty/nano_flame:${image_tag} ${duration}
+docker run --rm --privileged --pid=container:${nano_node_container_name} -v $(pwd):/data gr0v1ty/nano_flame:${image_tag} ${duration} > /dev/null 2>&1

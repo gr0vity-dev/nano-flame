@@ -17,10 +17,6 @@ Run the following command to execute the script directly without downloading:
 ```bash
 curl -sSL https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s [container_name] [duration in seconds]
 ```
-or
-```bash
-wget -O - https://raw.githubusercontent.com/gr0vity-dev/nano-flame/main/run.sh | bash -s [container_name] [duration in seconds]
-```
 
 
 ## Usage
