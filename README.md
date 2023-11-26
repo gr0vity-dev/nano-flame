@@ -1,6 +1,7 @@
 # nano_flame
 
-`nano_flame` is a tool designed to simplify the generation of flame graphs for docker instances running `nano_node`. It's particularly useful for developers who need to analyze and optimize the performance of the nano-currency node.
+`nano_flame` is a tool designed to simplify the generation of flame graphs for docker instances running `nano_node`.
+It's particularly useful for developers who need to analyze and optimize the performance of the nano-currency node.
 
 ## Features
 - **Automatic Architecture Detection**: The script detects whether it's running on AMD64 or ARM64 (including Apple M1/M2) and selects the appropriate Docker image.
@@ -22,6 +23,7 @@ Navigate to the cloned directory and run the `add_alias.sh` script to add `nano-
 ```bash
 cd nano-flame
 ./add_alias.sh
+# Manually source the updated configuration file. The script will provide the specific command to use.
 ```
 
 This will set up the `nano-flame` command so you can easily call it from the terminal.
